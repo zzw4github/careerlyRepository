@@ -1,0 +1,26 @@
+package com.careerly.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping(value = "/test")
+public class TestController {
+
+   Logger log = LoggerFactory.getLogger(TestController.class);
+  
+   @RequestMapping(value = "/index")
+   public ModelAndView list(HttpServletRequest request,HttpServletResponse response) {
+      String pagePath = "/index";
+      ModelAndView mv = new ModelAndView(pagePath);
+      return mv;
+   }
+   
+}
+
