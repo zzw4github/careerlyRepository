@@ -1,8 +1,5 @@
 package com.careerly.common;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.BeansException;
@@ -17,7 +14,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class SpringContextUtil implements ApplicationContextAware {
    private static ApplicationContext applicationContext;
-   public static Map<String, String> jobMap = new HashMap<String, String>();
 
    public static ApplicationContext getApplicationContext() {
       return applicationContext;

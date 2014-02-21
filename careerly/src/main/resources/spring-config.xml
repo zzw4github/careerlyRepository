@@ -12,7 +12,7 @@
        ">
 
 	<!-- 扫描注解Bean -->
-	<context:component-scan base-package="com.rockontrol.cloud.platform">
+	<context:component-scan base-package="com.careerly">
 	    <!-- 除controller层以外，其他的都被装配 -->
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
