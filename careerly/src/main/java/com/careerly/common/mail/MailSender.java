@@ -152,23 +152,4 @@ public class MailSender {
 			throw new Exception(mailMsg.getTo()+"发送失败！");
 		}
 	}
-
-	public static void main(String[] args) {
-		MailServerInfo server = new MailServerInfo();
-		server.setHost("smtp.163.com");
-		server.setUserName("zhangsan@163.com");
-		server.setPassWord("mima");
-
-		MailSender sender = new MailSender(server);
-
-		MailMessage msg = new MailMessage();
-		msg.setTo("lisi@163.com");
-		msg.setSubject("邮件测试");
-		msg.setContent("ceeshi  ~~~~~~~~~~~~~~<br/>");
-		try {
-			sender.sendMoreTextMail(msg,"zhangsan@163.com");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 }
