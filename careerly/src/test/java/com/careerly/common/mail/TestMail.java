@@ -1,4 +1,4 @@
-package com.careerly.mail;
+package com.careerly.common.mail;
 
 
 import org.junit.Before;
