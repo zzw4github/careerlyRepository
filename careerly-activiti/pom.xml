@@ -2,13 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>careerly</groupId>
-	<artifactId>careerly</artifactId>
+	<groupId>careerly-activiti</groupId>
+	<artifactId>careerly-activiti</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<!-- 打包类型 -->
 	<packaging>war</packaging>
 
-	<name>careerly</name>
+	<name>careerly-activiti</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -18,8 +18,9 @@
 		<hibernate.version>4.2.0.SP1</hibernate.version><!-- hibernate版本号 -->
 		<mysql.version>5.1.6</mysql.version><!-- 连接mysql数据库jar包版本号 -->
 		<c3p0.version>0.9.1.2</c3p0.version><!-- c3p0连接池版本号 -->
-		<org.aspectj.version>1.7.0</org.aspectj.version><!--  -->
-		<org.slf4j.version>1.5.8</org.slf4j.version><!-- slf4j日志版本号 -->
+		<org.aspectj.version>1.7.0</org.aspectj.version>
+		<slf4j.version>1.7.5</slf4j.version><!-- 日志版本号 -->
+		<log4j.version>1.2.17</log4j.version><!-- 日志版本号 -->
 		<javax.mail.version>1.5.0-b01</javax.mail.version><!-- 邮件版本号java mail -->
 		<org.json.version>20090211</org.json.version><!-- json版本号 -->
 		<net.sf.json-lib.version>2.4</net.sf.json-lib.version><!-- json版本号 -->
@@ -30,17 +31,76 @@
 		<com.jcraft.version>0.1.46</com.jcraft.version><!-- jsch版本（远程登录） -->
 		<junit.version>4.11</junit.version><!-- junit版本号 -->
 		<com.thoughtworks.xstream.version>1.4.4</com.thoughtworks.xstream.version>
+		<activiti.version>5.14</activiti.version><!-- activiti版本号 -->
+        <activiti.engine.version>5.14</activiti.engine.version>
 		<!-- jar版本号 end -->
 	</properties>
 	<dependencies>
-
-		<!-- 配置hibernate start -->
+		
+		<!-- activiti start-->
 		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-engine</artifactId>
+			<version>${activiti.engine.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring</artifactId>
+			<version>${activiti.version}</version>
+		</dependency>
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-json-converter</artifactId>
+            <version>${activiti.version}</version>
+        </dependency>
+
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-explorer</artifactId>
+            <version>${activiti.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-modeler</artifactId>
+            <version>${activiti.version}</version>
+		</dependency>
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-rest</artifactId>
+            <version>${activiti.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-diagram-rest</artifactId>
+            <version>${activiti.version}</version>
+        </dependency>
+        <!-- activiti start-->
+		
+		
+		<!-- 配置hibernate start -->
+			<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
+		</dependency>
+		<!-- 配置hibernate end -->
+		
+		<!-- mysql start -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -48,9 +108,9 @@
 			<type>jar</type>
 			<scope>runtime</scope>
 		</dependency>
-		<!-- 配置hibernate end -->
-
-		<!-- 配置c3p0连接池 -->
+		<!-- mysql end -->
+		
+		<!-- 配置c3p0连接池 start-->
 		<dependency>
 			<groupId>c3p0</groupId>
 			<artifactId>c3p0</artifactId>
@@ -58,8 +118,35 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+		<!-- 配置c3p0连接池 end-->
 
 		<!-- 配置spring start -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
@@ -72,18 +159,12 @@
 			<version>${spring.version}</version>
 			<scope>compile</scope>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-oxm</artifactId>
 			<version>${spring.version}</version>
 			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${spring.version}</version>
-			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -101,19 +182,38 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>${org.aspectj.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>3.3.1</version>
+		</dependency>
 		<!-- 配置spring end -->
 
-		<!-- log start -->
+		<!-- log begin -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>${org.slf4j.version}</version>
+			<version>${slf4j.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${org.slf4j.version}</version>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
 		</dependency>
 		<!-- log end -->
 		
@@ -140,6 +240,7 @@
 			<version>${net.sf.json-lib.version}</version>
 		</dependency>
 		<!-- 配置json end -->
+		
 
 		<!-- jackson start -->
 		<dependency>
@@ -148,6 +249,7 @@
 			<version>${org.codehaus.jackson.version}</version>
 		</dependency>
 		<!-- jackson end -->
+		
 		
 		<!-- 配置web start -->
 		<dependency>
@@ -178,28 +280,38 @@
 			<artifactId>jsch</artifactId>
 			<version>${com.jcraft.version}</version>
 		</dependency>
-		<!-- jsch end -->		
-		
-		<!-- junit -->
+		<!-- jsch end -->	
+			
+		<!-- junit start -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- junit start -->
+		
 	</dependencies>
+	
+	<!-- 引入activiti仓库 -->
+	<repositories>
+	  <repository>
+	    <id>Alfresco Maven Repository</id>
+	    <url>https://maven.alfresco.com/nexus/content/groups/public/</url>
+	  </repository>
+	</repositories>
 
 
 	<!-- build project -->
 	<build>
 		<!-- 部署 name -->
-		<finalName>careerly</finalName>
+		<finalName>careerly-activiti</finalName>
 		<resources>
 			<!-- 导入properties文件 -->
 			<resource>
 				<directory>src/main/resources</directory>
 				<includes>
-					<include>*.properties</include>
+					<include>**/*.properties</include>
 				</includes>
 				<filtering>true</filtering>
 			</resource>
@@ -207,7 +319,7 @@
 			<resource>
 				<directory>src/main/resources</directory>
 				<includes>
-					<include>*.xml</include>
+					<include>**/*.xml</include>
 				</includes>
 			</resource>
 		</resources>
@@ -264,7 +376,7 @@
 				<artifactId>maven-jetty-plugin</artifactId>
 				<version>6.1.26</version>
 				<configuration>
-					<contextPath>/careerly</contextPath>
+					<contextPath>/careerly-activiti</contextPath>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<stopKey>foo</stopKey>
 					<stopPort>9999</stopPort>
