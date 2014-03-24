@@ -13,6 +13,12 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><!-- 编码格式 -->
+		
+		<!-- 数据库参数设置 -->
+		<database.url>jdbc:mysql://localhost:3306/careerly?useUnicode=true&amp;characterEncoding=UTF-8</database.url>
+		<db.user>root</db.user>
+		<db.password>123456</db.password>
+		
 		<!-- jar包版本号 start -->
 		<spring.version>3.1.2.RELEASE</spring.version><!-- spring 版本号 -->
 		<hibernate.version>4.2.0.SP1</hibernate.version><!-- hibernate版本号 -->

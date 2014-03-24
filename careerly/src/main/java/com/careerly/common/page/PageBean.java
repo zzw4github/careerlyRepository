@@ -7,12 +7,16 @@ package com.careerly.common.page;
 * @author careerly
 */ 
 public class PageBean {
-
-	private int currentPage = 1;// 当前页数
+	
+	private static final int defaultCurrentPage = 10;
+	
+	private static final int defaultShowPages = 5;
+	
+	private int currentPage = defaultCurrentPage;// 当前页数
 
 	public int totalPages = 0;// 总页数
 
-	private int pageSize = 10;// 每页显示数
+	private int pageSize = 1;// 每页显示数
 
 	private int totalRows = 0;// 总数据数
 
@@ -26,7 +30,38 @@ public class PageBean {
 
 	private boolean hasPreviousPage = false;// 是否有前一页
 	
+	private int showPages = defaultShowPages;//页面显示页数
 	
+	private int currentIndex=1;//当前索引指向位置
+	
+	
+	public int getCurrentIndex() {
+		return currentIndex;
+	}
+
+	public void setCurrentIndex(int currentIndex) {
+		this.currentIndex = currentIndex;
+	}
+
+	public int getShowPages() {
+		return showPages;
+	}
+
+	public void setShowPages(int showPages) {
+		this.showPages = showPages;
+	}
+
+	private String url;//页面url地址
+	
+	
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
 	public PageBean(int pageSize, int currentPage, int totalRows) {
 
 		this.pageSize = pageSize;
@@ -59,11 +94,6 @@ public class PageBean {
 	 * @throws
 	 */ 
 	public int getTotalPages() {
-		if ((totalRows % pageSize) == 0) {
-			totalPages = totalRows / pageSize;
-		} else {
-			totalPages = totalRows / pageSize + 1;
-		}
 		return totalPages;
 	}
 
@@ -85,6 +115,12 @@ public class PageBean {
 
 	public void setTotalRows(int totalRows) {
 		this.totalRows = totalRows;
+		/**设置页数**/
+		if ((totalRows % pageSize) == 0) {
+			totalPages = totalRows / pageSize;
+		} else {
+			totalPages = totalRows / pageSize + 1;
+		}
 	}
 
 	/**

@@ -20,23 +20,27 @@ public class ErrorTool {
 	
 	/**
 	 * @author careerly
-	 * @Description: 业务异常转换
+	 * @Description: 业务异常转换 
 	 * @returnType BusinessServiceException
 	 * @throws
+	 * 注：异常信息后面带有“*”表示为调用外部接口抛出异常
+	 * 	     异常信息后面带有“&”表示为dao层抛出异常
 	 */ 
 	public static BusinessServiceException errorCodeAutoException(Exception e,String errorMsg)
  {
-		BusinessServiceException rebex = null;
-		if (e instanceof BusinessServiceException || e instanceof DAOException
-				|| e instanceof InterfaceException) {
-			if (StringUtils.isBlank(e.getMessage())) {
-				rebex = new BusinessServiceException(errorMsg, e);
-			} else {
-				rebex = new BusinessServiceException(e.getMessage(), e);
-			}
+		String reErrorMsg = "";
+		if (e instanceof BusinessServiceException) {
+			reErrorMsg = StringUtils.isBlank(e.getMessage()) ? errorMsg : e
+					.getMessage();
+		} else if (e instanceof DAOException) {
+			reErrorMsg = StringUtils.isBlank(e.getMessage()) ? errorMsg : (e
+					.getMessage() + "&");
+		} else if (e instanceof InterfaceException) {
+			reErrorMsg = StringUtils.isBlank(e.getMessage()) ? errorMsg : (e
+					.getMessage() + "*");
 		} else {
-			rebex = new BusinessServiceException(errorMsg, e);
+			reErrorMsg = errorMsg;
 		}
-		return rebex;
+		return new BusinessServiceException(reErrorMsg, e);
 	}
 }

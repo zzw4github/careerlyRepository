@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -48,7 +51,7 @@ $().ready(function(){
 	<ul id="browser" class="filetree">
 	<li><span class="folder">系统设置</span>
 			<ul>
-		<li><span class="file"><a onclick="urlTarget('content/风险警示列表.html');">风险警示</a></span></li>
+		<li><span class="file"><a onclick="urlTarget('<%=path%>/user/list');">用户管理</a></span></li>
 		<li><span class="file"><a onclick="urlTarget('content/风险评估列表.html');">风险评估</a></span></li>
 		<li>
 		<span class="folder">权限设置</span>

@@ -3,6 +3,7 @@ package com.careerly.business.service;
 import java.util.List;
 
 import com.careerly.business.dbmodel.UserInfo;
+import com.careerly.common.page.PageBean;
 import com.careerly.exception.BusinessServiceException;
 
 
@@ -14,5 +15,5 @@ public interface IUserService {
 	 * @returnType List<UserInfo>
 	 * @throws
 	 */ 
-	public List<UserInfo> findAll() throws BusinessServiceException;
+	public List<UserInfo> findListByPage(PageBean page) throws BusinessServiceException;
 }
