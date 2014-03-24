@@ -3,10 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-  <display-name>Careerly-activiti</display-name>
+  <display-name>Careerly</display-name>
   <!-- 配置欢迎页面 -->
   <welcome-file-list>
-  	<welcome-file>/careerly-activiti/index.jsp</welcome-file>
+  	<welcome-file>/careerly/index.jsp</welcome-file>
   </welcome-file-list>
   
   <!-- 加载配置  如果想装入多个配置文件，可以在 <param-value>

@@ -2,13 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>careerly-activiti</groupId>
-	<artifactId>careerly-activiti</artifactId>
+	<groupId>careerly</groupId>
+	<artifactId>careerly</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<!-- 打包类型 -->
 	<packaging>war</packaging>
 
-	<name>careerly-activiti</name>
+	<name>careerly</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -305,7 +305,7 @@
 	<!-- build project -->
 	<build>
 		<!-- 部署 name -->
-		<finalName>careerly-activiti</finalName>
+		<finalName>careerly</finalName>
 		<resources>
 			<!-- 导入properties文件 -->
 			<resource>
@@ -376,7 +376,7 @@
 				<artifactId>maven-jetty-plugin</artifactId>
 				<version>6.1.26</version>
 				<configuration>
-					<contextPath>/careerly-activiti</contextPath>
+					<contextPath>/careerly</contextPath>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<stopKey>foo</stopKey>
 					<stopPort>9999</stopPort>
