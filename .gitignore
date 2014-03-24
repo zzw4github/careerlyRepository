@@ -213,6 +213,6 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-/careerly/target
+/careerly-test/target
 /careerly-activiti/target
 
