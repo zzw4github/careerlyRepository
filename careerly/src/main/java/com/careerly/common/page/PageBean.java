@@ -12,11 +12,11 @@ public class PageBean {
 	
 	private static final int defaultShowPages = 5;
 	
-	private int currentPage = defaultCurrentPage;// 当前页数
+	private int currentPage = 1;// 当前页数
 
 	public int totalPages = 0;// 总页数
 
-	private int pageSize = 1;// 每页显示数
+	private int pageSize = defaultCurrentPage;// 每页显示数
 
 	private int totalRows = 0;// 总数据数
 

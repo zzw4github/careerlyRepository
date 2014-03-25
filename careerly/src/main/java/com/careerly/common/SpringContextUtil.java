@@ -2,6 +2,8 @@ package com.careerly.common;
 
 import javax.annotation.PostConstruct;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -13,6 +15,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class SpringContextUtil implements ApplicationContextAware {
+	
+   Logger log = LoggerFactory.getLogger(SpringContextUtil.class);
+	
    private static ApplicationContext applicationContext;
 
    public static ApplicationContext getApplicationContext() {
@@ -42,8 +47,9 @@ public class SpringContextUtil implements ApplicationContextAware {
     */
    @PostConstruct
    private void init() {
-	   
-	   System.out.println("init start ---------------");
+	   log.info("init start!");
+	   log.info("to do something");
+	   log.info("init end!");
    }
 
 }

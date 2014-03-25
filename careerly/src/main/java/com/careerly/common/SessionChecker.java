@@ -10,18 +10,27 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 @Component
 public class SessionChecker implements HandlerInterceptor{
-    Logger logger = LoggerFactory.getLogger(SessionChecker.class);
+    Logger log = LoggerFactory.getLogger(SessionChecker.class);
     
     public boolean preHandle(HttpServletRequest request, javax.servlet.http.HttpServletResponse response, Object o){
-    	System.out.println(request.getRequestURL()+"------------------");
+    	try{
+    	log.info("pre handle...");
+    	log.info("uri:"+request.getRequestURI());
+    	/**设置请求和响应对象的encoding**/
+    	request.setCharacterEncoding(Constants.DEFAULT_ENCODING);
+    	response.setCharacterEncoding(Constants.DEFAULT_ENCODING);
+    	}catch(Exception e)
+    	{
+    		log.error("Error on invoking preHandle", e);
+    	}
     	return true;
     }
     
     public void postHandle(HttpServletRequest httpServletRequest, javax.servlet.http.HttpServletResponse httpServletResponse, Object o, org.springframework.web.servlet.ModelAndView modelAndView) throws Exception{
-        logger.debug("post handle...");
+    	log.debug("post handle...");
     }
 
     public void afterCompletion(HttpServletRequest httpServletRequest, javax.servlet.http.HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception{
-        logger.debug("after completion...");
+    	log.debug("after completion...");
     }
 }
