@@ -1,6 +1,7 @@
 package com.careerly.business.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import com.careerly.business.dbmodel.UserInfo;
 import com.careerly.business.service.IUserService;
 import com.careerly.business.utils.ControllerUtils;
 import com.careerly.common.page.PageBean;
+import com.careerly.common.vo.condition.SearchModel;
 import com.careerly.exception.OperateActionException;
 
 /**   

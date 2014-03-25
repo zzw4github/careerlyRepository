@@ -266,9 +266,9 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>jstl</groupId>
+			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
-			<version>${jstl.version}</version>
+			<version>1.2</version>
 		</dependency>
 		<!-- 配置web end -->
 

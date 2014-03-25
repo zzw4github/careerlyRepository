@@ -13,6 +13,7 @@
 <title>个人信息系统</title>
 <link href="<%=path%>/css/main.css" rel="stylesheet" type="text/css" media="all" />
 <script src="<%=path%>/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="<%=path%>/js/user/user.js" type="text/javascript"></script>
 </head>
 <body class="content-pages-body">
 <div class="content-pages-wrap">
@@ -22,13 +23,25 @@
 	<form id="form-search" name="form-search" action="" method="post">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="commonTableSearch">
         <tr>
-             <td ><div align="right">警示事由：</div></td>
-             <td ><input name="textfield223" type="text" class="inputTextNormal" id="textfield223" /></td>
-             <td ><div align="right">警示时间：</div></td>
-             <td ><input name="textfield224" type="text" class="inputTextNormal" id="textfield224" /></td>
-             <td ><div align="right">警示方式：</div></td>
-            <td ><input name="textfield22" type="text" class="inputTextNormal" id="textfield22" /></td>
-            <td align="right"><button>检索</button></td>
+             <td ><div align="right">用户名称：</div></td>
+             <td >
+            	 <input name="search[0].name" type="hidden" class="inputTextNormal" value ="userName" />
+            	 <input name="search[0].condition" type="hidden" class="inputTextNormal" value="${pageCondition.like}"/>
+            	 <input name="search[0].value" type="text" class="inputTextNormal" value="${page.search[0].value}"/>
+             </td>
+             <td ><div align="right">登录名称：</div></td>
+             <td >
+             	 <input name="search[1].name" type="hidden" class="inputTextNormal" value ="loginName" />
+            	 <input name="search[1].condition" type="hidden" class="inputTextNormal" value="${pageCondition.equal}"/>
+            	 <input name="search[1].value" type="text" class="inputTextNormal" value="${page.search[1].value}" />
+             </td>
+             <td ><div align="right">电话号码：</div></td>
+            <td >
+            	 <input name="search[2].name" type="hidden" class="inputTextNormal" value ="telephone" />
+            	 <input name="search[2].condition" type="hidden" class="inputTextNormal" value="${pageCondition.notEqual}"/>
+           		 <input name="search[2].value" type="text" class="inputTextNormal" value="${page.search[2].value}" />
+            </td>
+            <td align="right"><button onclick ="userActionConfirm('<%=path%>/user/list')">检索</button></td>
           </tr>
        	
     </table>

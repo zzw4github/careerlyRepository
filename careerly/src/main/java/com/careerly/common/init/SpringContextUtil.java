@@ -1,6 +1,7 @@
-package com.careerly.common;
+package com.careerly.common.init;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.ServletContext;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,10 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.WebApplicationContext;
+
+import com.careerly.common.vo.condition.PageCondition;
 
 /**
  * 获取spring容器，以访问容器中定义的其他bean
@@ -47,9 +52,9 @@ public class SpringContextUtil implements ApplicationContextAware {
     */
    @PostConstruct
    private void init() {
-	   log.info("init start!");
+	   log.info("SpringContextUtil init start!");
 	   log.info("to do something");
-	   log.info("init end!");
+	   log.info("SpringContextUtil init end!");
    }
 
 }

@@ -1,5 +1,10 @@
 package com.careerly.common.page;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.careerly.common.vo.condition.SearchModel;
+
 /**   
 * @Title: PageBean.java 
 * @Package com.careerly.common.page 
@@ -35,6 +40,18 @@ public class PageBean {
 	private int currentIndex=1;//当前索引指向位置
 	
 	
+	private List<SearchModel> search = new ArrayList<SearchModel>(); //存储查询条件集合
+	
+	
+	
+	public List<SearchModel> getSearch() {
+		return search;
+	}
+
+	public void setSearch(List<SearchModel> search) {
+		this.search = search;
+	}
+
 	public int getCurrentIndex() {
 		return currentIndex;
 	}

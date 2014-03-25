@@ -1,12 +1,15 @@
 package com.careerly.business.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.careerly.business.dbmodel.UserInfo;
+import com.careerly.business.utils.DaoUtils;
 import com.careerly.common.dao.impl.CommonDao;
 import com.careerly.common.page.PageBean;
 import com.careerly.exception.DAOException;
@@ -44,8 +47,13 @@ public class UserDao extends CommonDao {
 	public List<UserInfo> findListByPage(PageBean page) throws DAOException
 	{
 		try {
-			StringBuffer hql = new StringBuffer("FROM UserInfo ");
-			return this.findListByPage(hql.toString(), page, null);
+			Map<String, Object> searchMap = new HashMap<String, Object>();
+
+			StringBuffer hql = new StringBuffer("FROM UserInfo WHERE 1=1 ");
+
+			DaoUtils.setSearchParam(hql, page.getSearch(), searchMap);
+
+			return this.findListByPage(hql.toString(), page, searchMap);
 		} catch (Exception e) {
 			String errorMsg = "find user list is error!";
 			log.error(errorMsg, e);

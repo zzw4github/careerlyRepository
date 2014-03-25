@@ -50,10 +50,16 @@
 	{
 		setCurrentIndex(currentPage);
 		var path ="<%=pagePath%>";
-		var url =path+url;
+		var url =path+url+"?"+getSearchForm();
 		$("#currentPage").attr("value",currentPage);
     	$("#pageForm").attr("action",url);
 	    $("#pageForm").submit();
+	}
+	
+	/***序列化搜索条件**/
+	function getSearchForm()
+	{
+		return $("#form-search").serialize();
 	}
 	
 	/**指向当前索引**/
