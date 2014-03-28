@@ -32,7 +32,7 @@
 		</property>
 		<property name="packagesToScan">
 			<list>
-				<value>com.careerly.business</value>
+				<value>com.careerly.dao.dbmodel</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

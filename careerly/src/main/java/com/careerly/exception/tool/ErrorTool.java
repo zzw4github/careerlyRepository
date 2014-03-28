@@ -26,7 +26,7 @@ public class ErrorTool {
 	 * 注：异常信息后面带有“*”表示为调用外部接口抛出异常
 	 * 	     异常信息后面带有“&”表示为dao层抛出异常
 	 */ 
-	public static BusinessServiceException errorCodeAutoException(Exception e,String errorMsg)
+	public static BusinessServiceException errorAutoException(Exception e,String errorMsg)
  {
 		String reErrorMsg = "";
 		if (e instanceof BusinessServiceException) {

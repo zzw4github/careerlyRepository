@@ -61,5 +61,5 @@ function confSize(){
 	$("#header-wrap,#main-wrap").width(w); //统一页面框架宽度
 	$("#siderbar-box,#main-nav,#main-content,#main-content-box,#content-box").height(h - 82); //统一页面框架高度
 	//单独设定侧栏导航#nav-box高度，让导航菜单滚动条与浏览器高度契合，但页面内容高度小于设定最小高度时会导致左右滚动条高度不一致。
-	$("#nav-box",document.frames("siderbar-box").document).height($(window).height() - 92);
+	$("#nav-box",document.getElementById("siderbar-box").document).height($(window).height() - 92);
 }

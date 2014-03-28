@@ -57,18 +57,28 @@ $().ready(function(){
 		<span class="folder">权限设置</span>
 		<ul>
 			<li><span class="file"><a onclick="urlTarget('content/日常监管行政许可列表.html');">行政许可</a></span></li>
-			<li><span class="file"><a onclick="urlTarget('content/日常监管日常监督列表.html');">日常监督</a></span></li>
-			<li><span class="file"><a onclick="urlTarget('content/日常监管行政处罚列表.html');">行政处罚</a></span></li>
-			<li><span class="file"><a onclick="urlTarget('content/日常监管食品召回列表.html');">食品召回</a></span></li>
-			<li><span class="file"><a onclick="urlTarget('content/日常监管投诉举报列表.html');">投诉举报</a></span></li>
+		</ul>
+		</li>
+		</ul>
+	  </li>
+	  
+	  
+	 <!-- activiti -->
+	<li><span class="folder">流程管理</span>
+		<ul>
+		<li><span class="file"><a onclick="urlTarget('<%=path%>/activiti-deploy/list');">流程定义及部署管理</a></span></li>
+		<li><span class="file"><a onclick="urlTarget('content/风险评估列表.html');">流程列表</a></span></li>
+		<li>
+		<span class="folder">请假申请</span>
+		<ul>
+			<li><span class="file"><a onclick="urlTarget('content/日常监管行政许可列表.html');">请假申请</a></span></li>
+			<li><span class="file"><a onclick="urlTarget('content/日常监管行政许可列表.html');">请假办理</a></span></li>
+			<li><span class="file"><a onclick="urlTarget('content/日常监管行政许可列表.html');">已结束流程</a></span></li>
 		</ul>
 		</li>
 		</ul>
 	  </li>
 	 </ul>
-		
-
-	</ul>
 </div>
 </body>
 </html>

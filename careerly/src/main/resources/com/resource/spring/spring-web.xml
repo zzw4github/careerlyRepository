@@ -25,7 +25,7 @@
     <mvc:annotation-driven />
     
     <!-- spring 组件扫描 -->
-    <context:component-scan base-package="com.careerly.business.controller">
+    <context:component-scan base-package="com.careerly.controller">
     	<!-- 扫描controller组件 -->
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
