@@ -16,7 +16,7 @@
 <script src="<%=path%>/js/vendor/lhgdialog/lhgcore.lhgdialog.min.js"></script>
 <script src="<%=path%>/js/vendor/jquery.msgbox.7.1/jquery.msgbox.js"></script>
 <script src="<%=path%>/js/vendor/lhgdialog/openDialog.js"></script>
-<script src="<%=path%>/js/user/process_deploy.js"></script>
+<script src="<%=path%>/js/user/process.deploy.js"></script>
 </head>
 <body class="content-pages-body">
 <div class="content-pages-wrap">

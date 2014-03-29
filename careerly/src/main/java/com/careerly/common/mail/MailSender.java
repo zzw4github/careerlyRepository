@@ -21,7 +21,7 @@ import org.apache.commons.logging.LogFactory;
 import com.careerly.common.mail.vo.MailServerInfo;
 
 /**
- * 简单邮件（不带附件的邮件）发送器 http://www.bt285.cn BT下载
+ * 简单邮件（不带附件的邮件）
  */
 public class MailSender {
 	private static final Log log = LogFactory.getLog(MailSender.class);

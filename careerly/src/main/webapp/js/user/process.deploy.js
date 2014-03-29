@@ -4,22 +4,28 @@
 var ProcessDeploy = (function() {
 		var path = "careerly/";//跳转前缀地址
 		
+		//请求url地址
+		var requestAddr = 
+		{
+			//to add
+			toAddUrl:path+"activiti/deploy/add.jsp"
+			
+		}
+		
 		//list页面
 		var init = function()  {
 
 			//toadd 跳转到增加页面
 			$('#toadd').click(function() {
-				var url = path+"activiti/deploy/add.jsp";
-				openDialog(url,"部署流程",700,280);
+				openDialog(requestAddr.toAddUrl,"部署流程",700,280);
 			});
-			
 		};
 		
 		//增加页面
 		var add = function() {
 			//js验证初始化
 			if(typeof addCheck != 'undefined'){
-				$("#addForm").validate(addVMCheck);
+				$("#addForm").validate(addCheck);
 			}
 			
 			//取消操作
@@ -35,7 +41,7 @@ var ProcessDeploy = (function() {
 			//保存操作
 			$('#save').click(function() {
 				var options = {
-					success : showResponse,
+					//success : showResponse,
 					timeout : 30000
 				};
 				var res = $("#addForm").valid(); // 表单验证
@@ -46,24 +52,6 @@ var ProcessDeploy = (function() {
 				} 
 				return false;
 			});
-			
-			// 验证
-			var addCheck = {
-					rules : {
-						'processName':{
-							required: true
-						},
-						'createDate':{
-							required: true
-						},
-						'remark':{
-							required: true
-						},
-						'processFile':{
-							required: true
-						}
-					}
-			};
 		};
 		
 		
