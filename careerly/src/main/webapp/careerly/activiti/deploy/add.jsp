@@ -18,7 +18,8 @@
 <script src="<%=path%>/js/vendor/jquery.msgbox.7.1/jquery.msgbox.js"></script>
 <script src="<%=path%>/js/vendor/My97DatePicker/WdatePicker.js"></script>
 <script src="<%=path%>/js/vendor/jquery.form/jquery.form.min.js"></script>
-<script src="<%=path%>/js/vendor/validate/jquery.validate.min.js"></script>
+<script src="<%=path%>/js/vendor/validate/jquery.validate.js"></script>
+<script src="<%=path%>/js/vendor/validate/messages_cn.js"></script>
 <script src="<%=path%>/js/user/process.deploy.validate.js" type="text/javascript"></script>
 <script src="<%=path%>/js/user/process.deploy.js" type="text/javascript"></script>
 </head>
