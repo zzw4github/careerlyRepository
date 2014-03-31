@@ -10,7 +10,7 @@ var addCheck = {
 		'remark' : {
 			required : true
 		},
-		'processFile' : {
+		'file' : {
 			required : true
 		}
 	}

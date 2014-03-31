@@ -1,1 +1,2 @@
 1、此项目是传统的spring MVC 、spring 、hibernate搭建的web框架
+2、controller中重定向写法： return "redirect:/test/list";

@@ -32,14 +32,17 @@
     
     <!-- 配置拦截器，对请求进行拦截 处理 -->
     <mvc:interceptors>
-        <bean class="com.careerly.common.SessionChecker" />
+        <bean class="com.careerly.common.init.SessionChecker" />
     </mvc:interceptors>
 
 	<!-- 如果请求为 “/”,则直接重定向到“/index” -->
-    <mvc:view-controller path="/" view-name="forward:/index"/>
+    <mvc:view-controller path="/" view-name="forward:/index.jsp"/>
     
     <!-- 当在web.xml 中   DispatcherServlet使用 <url-pattern>/</url-pattern> 映射时，能映射静态资源 -->
     <mvc:default-servlet-handler/>
+    
+    <!-- controller异常处理 -->
+    <bean class="com.careerly.common.init.ExceptionHandler"></bean>
     
     <!-- 默认的视图解析器 在上边的解析错误时使用 (默认使用html)- p:order="1" -->
     <bean id="defaultViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -74,4 +77,10 @@
 	      </list>
 	    </property>
 	</bean>
+	
+	<!-- file 解析器 -->
+	<bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<property name="maxUploadSize" value="1073741824"/>
+	</bean>
+	
 </beans>

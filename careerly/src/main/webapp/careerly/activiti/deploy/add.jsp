@@ -12,14 +12,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
 <title>个人信息系统</title>
 <link href="<%=path%>/css/main.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="<%=path%>/js/vendor/msgbox/Styles/msgBoxLight.css"/>
+<link rel="stylesheet" href="<%=path%>/css/common.css"/>
+
 <script src="<%=path%>/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="<%=path%>/js/vendor/lhgdialog/lhgcore.lhgdialog.min.js"></script>
 <script src="<%=path%>/js/vendor/lhgdialog/openDialog.js"></script>
-<script src="<%=path%>/js/vendor/jquery.msgbox.7.1/jquery.msgbox.js"></script>
+<script src="<%=path%>/js/vendor/msgbox/Scripts/jquery.msgBox.js"></script>
 <script src="<%=path%>/js/vendor/My97DatePicker/WdatePicker.js"></script>
 <script src="<%=path%>/js/vendor/jquery.form/jquery.form.min.js"></script>
 <script src="<%=path%>/js/vendor/validate/jquery.validate.js"></script>
 <script src="<%=path%>/js/vendor/validate/messages_cn.js"></script>
+<script src="<%=path%>/js/page/common.js" type="text/javascript"></script>
 <script src="<%=path%>/js/user/process.deploy.validate.js" type="text/javascript"></script>
 <script src="<%=path%>/js/user/process.deploy.js" type="text/javascript"></script>
 </head>
@@ -28,7 +32,7 @@
     <div class="commonTitle">
       <h2>&gt;&gt; 流程部署</h2>
     </div>
-  <form id="addForm" name="addForm" action="/" method="post">
+  <form id="addForm" name="addForm"  method="post" enctype="multipart/form-data">
     <table border="0" cellspacing="1" cellpadding="0" class="commonTable">
        <tr>
           <td width="26%" align="right" class="title"><span class="required">*</span>流程名称：</td>
@@ -45,7 +49,7 @@
 		 <tr>
          <td align="right" class="title">上传附件：</td>
 	 	<td colspan="5">
-           <input  type="file" name="processFile" id="processFile" class="fileFieldCommon fileFieldM" />
+           <input  type="file" name="file" id="processFile" class="fileFieldCommon fileFieldM" />
         </td>
         </tr>
     </table>

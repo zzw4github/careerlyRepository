@@ -18,7 +18,7 @@ import com.careerly.common.vo.condition.SearchModel;
 import com.careerly.dao.dbmodel.UserInfo;
 import com.careerly.exception.OperateActionException;
 import com.careerly.service.business.IUserService;
-import com.careerly.utils.ControllerUtils;
+import com.careerly.utils.WebUtils;
 
 /**   
 * @Title: UserController.java 
@@ -46,7 +46,7 @@ public class UserController {
 			throw new OperateActionException(e.getMessage());
 		}finally
 		{
-			ControllerUtils.setPageParams(pageBean, mv, "/user/list");
+			WebUtils.setPageParams(pageBean, mv, "/user/list");
 		}
 		return mv;
 	}

@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+
+#addForm label.error {
+    width: auto;
+    color: #ff0000;
+    padding-left:5px;
+    font-size: 12px;
+}
+
+#pageForm label.error {
+    width: auto;
+    color: #ff0000;
+    padding-left:5px;
+    font-size: 12px;
+}
+
+
+#updateForm label.error {
+    width: auto;
+    color: #ff0000;
+    padding-left:5px;
+    font-size: 12px;
+}

@@ -9,13 +9,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.careerly.common.page.PageBean;
 import com.careerly.exception.OperateActionException;
 import com.careerly.service.oa.IDeployService;
-import com.careerly.utils.ControllerUtils;
+import com.careerly.tool.JsonUtils;
+import com.careerly.utils.WebUtils;
 
 /**   
 * @Title: DeployController.java 
@@ -50,9 +54,33 @@ public class DeployController {
 			throw new OperateActionException(e.getMessage());
 		}finally
 		{
-			ControllerUtils.setPageParams(pageBean, mv, "/activiti-deploy/list");
+			WebUtils.setPageParams(pageBean, mv, "/activiti-deploy/list");
 		}
 		return mv;
+	}
+	
+	
+	
+	 /**
+	 * @author careerly
+	 * @Description: 部署activiti工作流程
+	 * @returnType String
+	 * @throws
+	 */ 
+	@RequestMapping(value = "/deploy")
+	public String deploy(@RequestBody MultipartFile file,HttpServletResponse response) {
+		String msg = "部署流程成功！";
+		boolean status = true;
+		try {
+			log.info("deploy is start!");
+		} catch (Exception e) {
+			status = false;//执行异常时，状态为false。
+			msg = e.getMessage();//异常消息
+			log.error(e.getMessage(), e);
+		} finally {
+			WebUtils.renderJson(response, JsonUtils.jsonMsg(status, msg));
+		}
+		return null;
 	}
 
 }
