@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.ServletContextAware;
+
+import com.careerly.common.init.help.InitHelper;
 /**   
 * @Title: ServletContextUtil.java 
 * @Package com.careerly.common 
@@ -23,13 +25,20 @@ public class ServletContextUtil implements ServletContextAware {
 	public void setServletContext(ServletContext servletContext) {
 
 		log.info(" info on invoking setServletContext ");
-		this.servletContext = servletContext;
+		ServletContextUtil.servletContext = servletContext;
+	}
+	
+	public static ServletContext getApplicationContext() {
+		return servletContext;
 	}
 
+	@SuppressWarnings("unused")
 	@PostConstruct
 	private void init() {
 		log.info("ServletContextUtil init start!");
-		InitService.setPageCondition(servletContext);
+		InitHelper.setPageCondition(servletContext); //设置page条件
+		InitHelper.setApplicationPath(servletContext);//设置系统路径
+		InitHelper.setStaticResource(servletContext);
 		log.info("ServletContextUtil init end!");
 	}
 }

@@ -9,7 +9,7 @@ var ProcessDeploy = (function() {
 		//to add
 		toAddUrl : path + "activiti/deploy/add.jsp",
 		//depoy Url
-		addUrl : "/careerly/activiti-deploy/deploy"
+		addUrl : ctx+"/activiti-deploy/deploy"
 
 	}
 

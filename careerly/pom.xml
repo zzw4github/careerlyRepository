@@ -39,6 +39,7 @@
 		<com.thoughtworks.xstream.version>1.4.4</com.thoughtworks.xstream.version>
 		<activiti.version>5.14</activiti.version><!-- activiti版本号 -->
         <activiti.engine.version>5.14</activiti.engine.version>
+        <commons.configuration.version>1.8</commons.configuration.version>
 		<!-- jar版本号 end -->
 	</properties>
 	<dependencies>
@@ -258,6 +259,7 @@
 		
 		
 		<!-- 配置web start -->
+		<!-- servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -265,11 +267,36 @@
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
+		
+		<!-- jstl -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		
+		
+		<!-- taglib start  -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<scope>provided</scope>
+			<version>2.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>jsptags</groupId>
+			<artifactId>pager-taglib</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<!-- taglib end -->
+		
 		<!-- 配置web end -->
 
 		<!-- file upload start -->
@@ -288,6 +315,14 @@
 		</dependency>
 		<!-- jsch end -->	
 			
+		<!-- commons-configuration -->
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>${commons.configuration.version}</version>
+		</dependency>
+		<!-- commons-configuration end-->	
+		
 		<!-- junit start -->
 		<dependency>
 			<groupId>junit</groupId>

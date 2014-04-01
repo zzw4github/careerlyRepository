@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
+     <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>Img Tags</shortname>
+    <uri>img-tags</uri>
+        <tag>
+        <name>tag</name>
+        <tagclass>com.careerly.common.tag.ref.img.ImgTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <dynamic-attributes>true</dynamic-attributes>
+    </tag> 
+ </taglib>

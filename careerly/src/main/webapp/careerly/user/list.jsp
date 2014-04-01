@@ -1,19 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%
-	String path = request.getContextPath();
-%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=7" />
-<title>个人信息系统</title>
-<link href="<%=path%>/css/main.css" rel="stylesheet" type="text/css" media="all" />
-<script src="<%=path%>/js/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="<%=path%>/js/user/user.js" type="text/javascript"></script>
+<%@ include file="/common/common.jsp"%>
+<css:tag type="custom-style"/>
+<js:tag type="jquery"/>
+<script src="${ctx}/js/user/user.js" type="text/javascript"></script>
 </head>
 <body class="content-pages-body">
 <div class="content-pages-wrap">
@@ -41,7 +33,7 @@
             	 <input name="search[2].condition" type="hidden" class="inputTextNormal" value="${pageCondition.notEqual}"/>
            		 <input name="search[2].value" type="text" class="inputTextNormal" value="${page.search[2].value}" />
             </td>
-            <td align="right"><button onclick ="userActionConfirm('<%=path%>/user/list')">检索</button></td>
+            <td align="right"><button onclick ="userActionConfirm('${ctx}/user/list')">检索</button></td>
           </tr>
        	
     </table>

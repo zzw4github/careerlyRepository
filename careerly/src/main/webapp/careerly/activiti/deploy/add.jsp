@@ -1,31 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%
-	String path = request.getContextPath();
-%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=7" />
-<title>个人信息系统</title>
-<link href="<%=path%>/css/main.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="<%=path%>/js/vendor/msgbox/Styles/msgBoxLight.css"/>
-<link rel="stylesheet" href="<%=path%>/css/common.css"/>
-
-<script src="<%=path%>/js/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="<%=path%>/js/vendor/lhgdialog/lhgcore.lhgdialog.min.js"></script>
-<script src="<%=path%>/js/vendor/lhgdialog/openDialog.js"></script>
-<script src="<%=path%>/js/vendor/msgbox/Scripts/jquery.msgBox.js"></script>
-<script src="<%=path%>/js/vendor/My97DatePicker/WdatePicker.js"></script>
-<script src="<%=path%>/js/vendor/jquery.form/jquery.form.min.js"></script>
-<script src="<%=path%>/js/vendor/validate/jquery.validate.js"></script>
-<script src="<%=path%>/js/vendor/validate/messages_cn.js"></script>
-<script src="<%=path%>/js/page/common.js" type="text/javascript"></script>
-<script src="<%=path%>/js/user/process.deploy.validate.js" type="text/javascript"></script>
-<script src="<%=path%>/js/user/process.deploy.js" type="text/javascript"></script>
+<%@ include file="/common/common.jsp"%>
+<css:tag type="custom-style"/>
+<css:tag type="careerly"/>
+<js:tag type="jquery"/>
+<js:tag type="date"/>
+<script src="${ctx}/js/user/process.deploy.validate.js" type="text/javascript"></script>
+<script src="${ctx}/js/user/process.deploy.js" type="text/javascript"></script>
 </head>
 <body class="content-pages-body">
 <div class="content-pages-wrap">

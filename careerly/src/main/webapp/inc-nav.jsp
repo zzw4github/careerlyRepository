@@ -52,7 +52,7 @@ $().ready(function(){
 	<li><span class="folder">系统设置</span>
 			<ul>
 		<li><span class="file"><a onclick="urlTarget('<%=path%>/user/list');">用户管理</a></span></li>
-		<li><span class="file"><a onclick="urlTarget('content/风险评估列表.html');">风险评估</a></span></li>
+		<li><span class="file"><a onclick="urlTarget('<%=path%>/careerly/test/test.jsp');">风险评估</a></span></li>
 		<li>
 		<span class="folder">权限设置</span>
 		<ul>

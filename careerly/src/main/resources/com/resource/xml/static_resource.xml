@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- 静态资源配置文件 -->
+<packages>
+	
+	<!-- 注: name为提供者名称， normaljs为未格式化的js脚本路径，minjs为格式化的脚本，type类型（方便标签库按类型导入）-->
+	<script>
+		<name>jquery</name>
+		<normaljs>jquery-1.9.1.js</normaljs>
+		<minjs>jquery-1.9.1.min.js</minjs>
+		<type>jquery</type>
+	</script>
+	
+	<script>
+		<name>dialog</name>
+		<minjs>vendor/lhgdialog/lhgcore.lhgdialog.min.js</minjs>
+		<type>jquery</type>
+	</script>
+	
+	<script>
+		<name>dialog</name>
+		<minjs>vendor/lhgdialog/openDialog.js</minjs>
+		<type>jquery</type>
+	</script>
+	
+	<script>
+		<name>msgBox</name>
+		<minjs>vendor/msgbox/Scripts/jquery.msgBox.js</minjs>
+		<type>jquery</type>
+	</script>
+	
+	<script>
+		<name>jquery.form</name>
+		<minjs>vendor/jquery.form/jquery.form.min.js</minjs>
+		<type>jquery</type>
+	</script>
+	
+	<script>
+		<name>jquery.validate</name>
+		<minjs>vendor/validate/jquery.validate.js</minjs>
+		<type>jquery</type>
+	</script>
+	
+	<script>
+		<name>jquery.validate</name>
+		<minjs>vendor/validate/messages_cn.js</minjs>
+		<type>jquery</type>
+	</script>
+	
+	<script>
+		<name>WdatePicker</name>
+		<minjs>vendor/My97DatePicker/WdatePicker.js</minjs>
+		<type>date</type>
+	</script>
+	
+	<script>
+		<name>common</name>
+		<minjs>page/common.js</minjs>
+		<type>careerly</type>
+	</script>
+	
+	<!-- 注：name为css提供者名称，css为css路径（是全路径） -->
+	<link>
+		<name>main</name>
+		<css>css/main.css</css>
+		<type>custom-style</type>
+	</link>
+	
+	<link>
+		<name>msgbox</name>
+		<css>js/vendor/msgbox/Styles/msgBoxLight.css</css>
+		<type>custom-style</type>
+	</link>
+	
+	<link>
+		<name>main</name>
+		<css>css/common.css</css>
+		<type>custom-style</type>
+	</link>
+	
+</packages>
