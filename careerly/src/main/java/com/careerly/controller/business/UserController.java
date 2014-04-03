@@ -1,7 +1,6 @@
 package com.careerly.controller.business;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.careerly.common.page.PageBean;
-import com.careerly.common.vo.condition.SearchModel;
 import com.careerly.dao.dbmodel.UserInfo;
 import com.careerly.exception.OperateActionException;
 import com.careerly.service.business.IUserService;

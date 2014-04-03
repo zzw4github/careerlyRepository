@@ -19,7 +19,7 @@
 		<mysql.version>5.1.6</mysql.version><!-- 连接mysql数据库jar包版本号 -->
 		<c3p0.version>0.9.1.2</c3p0.version><!-- c3p0连接池版本号 -->
 		<org.aspectj.version>1.7.0</org.aspectj.version><!--  -->
-		<org.slf4j.version>1.5.8</org.slf4j.version><!-- slf4j日志版本号 -->
+		<org.slf4j.version>1.7.5</org.slf4j.version><!-- slf4j日志版本号 -->
 		<javax.mail.version>1.5.0-b01</javax.mail.version><!-- 邮件版本号java mail -->
 		<org.json.version>20090211</org.json.version><!-- json版本号 -->
 		<net.sf.json-lib.version>2.4</net.sf.json-lib.version><!-- json版本号 -->
