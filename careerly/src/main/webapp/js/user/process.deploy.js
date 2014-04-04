@@ -9,9 +9,11 @@ var ProcessDeploy = (function() {
 		//to add
 		toAddUrl : path + "activiti/deploy/add.jsp",
 		//depoy Url
-		addUrl : ctx+"/activiti-deploy/deploy"
+		addUrl : ctx+"/activiti-deploy/deploy",
+		//read resource
+		resoureUrl : ctx+"/activiti-deploy/read"
 
-	}
+	};
 
 	//list页面
 	var init = function() {
@@ -19,6 +21,12 @@ var ProcessDeploy = (function() {
 		$('#toadd').click(function() {
 			openDialog(requestAddr.toAddUrl, "部署流程", 700, 280);
 		});
+		
+		//toxml查看
+		$('#processXml').click(function() {
+			location.href = requestAddr.resoureUrl+"/"+$();
+		});
+		
 	};
 
 	//增加页面
@@ -57,10 +65,10 @@ var ProcessDeploy = (function() {
 	//取消操作
 	var cancel = function() {
 		closeDialog();//关闭dialog
-	}
+	};
 
 	return {
 		init : init,
 		add : add
-	}
+	};
 }).call(this);

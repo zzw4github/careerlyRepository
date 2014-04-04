@@ -20,8 +20,8 @@ function showSuccessResponse(responseText) {
 		success : function(result) {
 			if (result == "确定") {
 				if (status) {
-					closeDialog();//关闭dialog
 					frameElement.api.opener.location.reload();//刷新父页面
+					closeDialog();//关闭dialog
 				}
 			}
 		}

@@ -294,7 +294,7 @@ a.btnIconShowInfo:hover      { background-position:-721px -25px;}
 .commonTitle h2 a { color:#10568a; text-decoration:underline;}
 .commonTitle h2 a:hover { color:#09F;}
 
-.commonTable      { background:#7BB5D7; width:100%;}
+.commonTable      { background:#7BB5D7; width:100%;font-size:14px;}
 .commonTable th,
 .commonTable td   { background:#fff; border:1px solid #7BB5D7; *border:none; height:22px; line-height:22px; padding:2px;}
 *+html .commonTable td  { border:none;}

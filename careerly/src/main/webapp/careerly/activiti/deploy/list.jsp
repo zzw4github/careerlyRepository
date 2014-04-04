@@ -21,8 +21,11 @@
         </ul>
     </div>
     
-    <table border="0" cellspacing="1" cellpadding="0" class="commonTable">
+    <table border="0" cellspacing="1" cellpadding="0" class="commonTable" id="table_one">
   		<tr>
+  			<th width="3%">
+                <input type="checkbox" name="checkbox" class="chk" onclick="checkAll();" />
+            </th>
 			<th>流程编号</th>
 			<th>部署编号</th>
 			<th>名称</th>
@@ -38,12 +41,13 @@
    		<c:set var="process" value="${item[0] }" />
 		<c:set var="deployment" value="${item[1] }" />
      	 <tr>
+     	 	<td><label><input type="checkbox" name="id" class="chk"/></label></td>
      	 	<td align="center">${process.id }</td>
 			<td align="center">${process.deploymentId }</td>
 			<td align="center">${process.name }</td>
 			<td align="center">${process.key }</td>
 			<td align="center">${process.version }</td>
-			<td align="center">${process.resourceName }</td>
+			<td align="center"><a href="#" target="_blank" id="processXml">${process.resourceName }</a></td>
 			<td align="center">${process.diagramResourceName }</td>
 			<td align="center">${deployment.deploymentTime }</td>
 			<td align="center">${process.suspended }</td>
@@ -58,6 +62,7 @@
 </div>
 <script language="javascript">
 $(function() {
+	Table.init("table_one");
 	ProcessDeploy.init();
 })
 </script>

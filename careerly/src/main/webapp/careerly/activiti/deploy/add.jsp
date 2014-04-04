@@ -6,6 +6,7 @@
 <css:tag type="custom-style"/>
 <css:tag type="careerly"/>
 <js:tag type="jquery"/>
+<js:tag type="careerly"/>
 <js:tag type="date"/>
 <script src="${ctx}/js/user/process.deploy.validate.js" type="text/javascript"></script>
 <script src="${ctx}/js/user/process.deploy.js" type="text/javascript"></script>

@@ -1,14 +1,17 @@
 package com.careerly.controller.oa;
 
+import java.io.InputStream;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.activiti.engine.repository.ProcessDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -72,7 +75,7 @@ public class DeployController {
 		String msg = "部署流程成功！";
 		boolean status = true;
 		try {
-			log.info("deploy is start!");
+			this.deployService.deploy(file);
 		} catch (Exception e) {
 			status = false;//执行异常时，状态为false。
 			msg = e.getMessage();//异常消息
@@ -82,5 +85,28 @@ public class DeployController {
 		}
 		return null;
 	}
+	
+	
+	 /**
+     * 读取资源，通过部署ID
+     * @param processDefinitionId 流程定义
+     * @param resourceType        资源类型(xml|image)
+     * @throws Exception
+     */
+    @RequestMapping(value = "/resource/read/{id}/{type}")
+    public void readResource(@PathVariable String id,@PathVariable String type,HttpServletResponse response) throws Exception {
+    	try {
+    		InputStream resourceAsStream = this.deployService.readResource(id, type);
+            byte[] b = new byte[1024];
+            int len = -1;
+            while ((len = resourceAsStream.read(b, 0, 1024)) != -1) {
+                response.getOutputStream().write(b, 0, len);
+            }
+		} catch (Exception e) {
+			log.error("Error on invoking readResource!", e);
+			throw new OperateActionException(e.getMessage());
+		}
+    	
+    }
 
 }

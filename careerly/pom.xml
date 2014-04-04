@@ -40,6 +40,7 @@
 		<activiti.version>5.14</activiti.version><!-- activiti版本号 -->
         <activiti.engine.version>5.14</activiti.engine.version>
         <commons.configuration.version>1.8</commons.configuration.version>
+        <common.io.version>2.4</common.io.version>
 		<!-- jar版本号 end -->
 	</properties>
 	<dependencies>
@@ -299,14 +300,6 @@
 		
 		<!-- 配置web end -->
 
-		<!-- file upload start -->
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>${commons-fileupload.version}</version>
-		</dependency>
-		<!-- file upload end -->
-		
 		<!-- jsch start -->
 		<dependency>
 			<groupId>com.jcraft</groupId>
@@ -316,6 +309,21 @@
 		<!-- jsch end -->	
 			
 		<!-- commons-configuration -->
+		
+		<!-- file upload start -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons-fileupload.version}</version>
+		</dependency>
+		<!-- file upload end -->
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${common.io.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>commons-configuration</groupId>
 			<artifactId>commons-configuration</artifactId>
